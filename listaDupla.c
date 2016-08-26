@@ -98,8 +98,8 @@ link BuscaMenor(ListaDupla l){
    if(t->item < aux)
     aux = t->item;
     menor = t;
-    t = t->next;
   }
+  t = t->next;
   return menor;
 }
 void ordena(ListaDupla l){
