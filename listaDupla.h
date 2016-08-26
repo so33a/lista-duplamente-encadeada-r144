@@ -13,6 +13,7 @@ typedef struct {
    link z;
 } * ListaDupla;
 
+
 ListaDupla inicializa();
 link novoNo (int item, link prev, link next);
 link buscar(ListaDupla l, int item);
@@ -22,5 +23,7 @@ link removeNo (link x);
 void imprime(ListaDupla l);
 void imprimeReverso(ListaDupla l);
 void destroiLista(ListaDupla l);
+link BuscaMenor(ListaDupla l);
+void ordena(ListaDupla l);
 
 #endif
