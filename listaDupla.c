@@ -90,7 +90,7 @@ void destroiLista(ListaDupla l) {
   free(t);
   free(l);
 }
-link buscaMenor(ListaDupla l){
+link BuscaMenor(ListaDupla l){
   link t = l->head;
   int aux = t->item;
   link menor;
@@ -102,4 +102,16 @@ link buscaMenor(ListaDupla l){
   }
   return menor;
 }
-
+void ordena(ListaDupla l){
+  link menor;
+  link t = l->head;
+  ListaDupla Laux;
+  
+  while(t != l->z){
+    menor = BuscaMenor( l));
+    insereDepois( Laux,Laux->z->prev, removeNo(menor););
+    t=t->next;
+  }
+  destroiLista(l);
+  l = Laux;
+}
