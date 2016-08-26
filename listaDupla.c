@@ -90,4 +90,16 @@ void destroiLista(ListaDupla l) {
   free(t);
   free(l);
 }
+link buscaMenor(ListaDupla l){
+  link t = l->head;
+  int aux = t->item;
+  link menor;
+  while (t!=l->z){
+   if(t->item < aux)
+    aux = t->item;
+    menor = t;
+    t = t->next;
+  }
+  return menor;
+}
 
