@@ -13,6 +13,8 @@ int main () {
   insereDepois(l, aux2, aux);
   imprime(l);
   imprimeReverso(l);
+  imprime(BuscaMenor(ListaDupla l));
+  
   printf ("\nremovendo %d \n", aux2->item);
   if((aux2 = buscar(l, 21) ) != NULL) 
     removeNo(aux2);
