@@ -92,26 +92,25 @@ void destroiLista(ListaDupla l) {
 }
 link BuscaMenor(ListaDupla l){
   link t = l->head;
-  int aux = t->item;
-  link menor;
-  while (t!=l->z){
-   if(t->item < aux)
-    aux = t->item;
-    menor = t;
+  Link menor;
+  
+  while (t != l->z){
+   if(t->item < menor->item)
+      menor = t;
+    t = t->next;
   }
-  t = t->next;
-  return menor;
+    return menor;
 }
-void ordena(ListaDupla l){
+ListaDupla ordena(ListaDupla l){
   link menor;
   link t = l->head;
-  ListaDupla Laux;
+  ListaDupla Laux;//lista auxilliar
   
   while(t != l->z){
-    menor = BuscaMenor( l));
-    insereDepois( Laux,Laux->z->prev, removeNo(menor););
-    t=t->next;
+    menor = BuscaMenor(l));//pega o menor da lista
+    insereDepois( Laux,Laux->z->prev, removeNo(menor););//remove o menor;insere em Laux->z->prev da lista Laux
+    t = t->next;
   }
-  destroiLista(l);
-  l = Laux;
+  destroiLista(l);//destroi e limpa a memoria da lista l
+  return Laux;//retorna a lista auxiliar ordenada
 }
