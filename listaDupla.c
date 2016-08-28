@@ -32,7 +32,7 @@ void insereDepois (ListaDupla l, link x, link t) {
     t->next = l->z;
     t->prev = l->z;
     l->z->prev = t;
-    l->z->next = t; 
+    l->z->next = t;
   } else {
     t->next = x->next;
     t->prev = x;
@@ -74,7 +74,7 @@ link buscar(ListaDupla l, int item) {
   }
   return NULL;
 }
-/* 
+/*
 void insereAntes (ListaDupla l, link x, link t);
 */
 
@@ -84,16 +84,16 @@ void destroiLista(ListaDupla l) {
     l->head = t->next;
     l->z->next = t->next;
     l->head->prev = l->z;
-    free(t); 
+    free(t);
     t = l->head;
-  } 
+  }
   free(t);
   free(l);
 }
 link BuscaMenor(ListaDupla l){
   link t = l->head;
-  Link menor;
-  
+  link menor = l->head;
+
   while (t != l->z){
    if(t->item < menor->item)
       menor = t;
@@ -105,12 +105,12 @@ ListaDupla ordena(ListaDupla l){
   link menor;
   link t = l->head;
   ListaDupla Laux;//lista auxilliar
-  
+
   while(t != l->z){
-    menor = BuscaMenor(l));//pega o menor da lista
-    insereDepois( Laux,Laux->z->prev, removeNo(menor););//remove o menor;insere em Laux->z->prev da lista Laux
+    //menor = BuscaMenor(l);//pega o menor da lista
+    insereDepois( Laux,Laux->z->prev, removeNo(BuscaMenor(l)));//remove o menor;insere em Laux->z->prev da lista Laux
     t = t->next;
   }
-  destroiLista(l);//destroi e limpa a memoria da lista l
-  return Laux;//retorna a lista auxiliar ordenada
+ destroiLista(l);//destroi e limpa a memoria da lista l
+ return Laux;//retorna a lista auxiliar ordenada
 }
